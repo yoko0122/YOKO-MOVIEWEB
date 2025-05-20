@@ -42,16 +42,16 @@ export const Footer = () => {
             <div className=" text-[20px]">follow us</div>
             <div className="grid gap-2 md:flex md:gap-4">
              
-              <a href="" className="flex"> 
+           <a href="https://www.facebook.com/profile.php?id=100035801532871&ref=_ig_profile_ac"  target="blank" className="flex"> 
                 <p> <Facebook /></p>
                 facebook</a>
-              <a href="" className="flex"> 
+              <a href="https://www.instagram.com/dulbadrah.ch/" target="blank" className="flex"> 
                 <p> <Instagram /></p>
-                facebook</a>
+                Instagram</a>
               <a href="" className="flex"> 
                 <p> <Twitter /></p>
                 Twitter</a>
-              <a href="" className="flex"> 
+              <a href="https://www.youtube.com/" target="blank" className="flex"> 
                 <p> <Youtube /></p>
                 Youtube</a>
             </div>
