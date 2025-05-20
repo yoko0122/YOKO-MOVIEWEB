@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { Play } from "lucide-react";
 
 export const MovieCaruoselItem = () => {
   return (
@@ -30,7 +31,7 @@ export const MovieCaruoselItem = () => {
           </p>
 
           <button className="mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-md bg-white text-black font-medium hover:bg-gray-100 transition">
-            {/* <FaPlay /> */}
+            <Play />
             Watch Trailer
           </button>
         </div>

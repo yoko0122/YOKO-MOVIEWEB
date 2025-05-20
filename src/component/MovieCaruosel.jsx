@@ -12,14 +12,13 @@ export const MovieCaruosel = () => {
   return (
     <div className="flex justify-center items-center">
       <div>
-        <Carousel
-          plugins={[
+        <Carousel className=" relative"
+         plugins={[
             Autoplay({
-              delay: 2000,
+              delay: 3000,
             }),
-          ]}
-        ></Carousel>{" "}
-        <Carousel className=" relative">
+          ]}>
+         
           <CarouselContent>
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index}>

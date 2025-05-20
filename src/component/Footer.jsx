@@ -1,6 +1,7 @@
 import { Clapperboard, Facebook } from "lucide-react";
 import { Mail } from "lucide-react";
 import { Phone } from "lucide-react";
+import { Instagram ,Twitter , Youtube} from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -13,7 +14,7 @@ export const Footer = () => {
             </button>
             <div className="pt-2 text-[20px]">Movie Z</div>
           </div>
-          <div>© 2024 Movie Z. All Rights Reserved.</div>
+          <div>© 2025 Movie Z. All Rights Reserved.</div>
         </div>
         <div className="flex justify-between md:gap-20  md:pr-10">
           <div className="grid ">
@@ -24,7 +25,7 @@ export const Footer = () => {
               </div>
               <div>
                 <p>Email:</p>
-                <p>dolbadrahchuka@gmail.com</p>
+                <a href="">dolbadrahchuka@gmail.com</a>
               </div>
             </div>
             <div className="flex gap-2">
@@ -33,17 +34,26 @@ export const Footer = () => {
               </div>
               <div>
                 <p>Phone: </p>
-                <p>94438118</p>
+                <a href="">94438118</a>
               </div>
             </div>
           </div>
           <div className="grid gap-2  md:h-2">
             <div className=" text-[20px]">follow us</div>
-            <div className="grid gap-2 md:flex md:gap-3">
-              <div>facebook</div>
-              <div>instagram</div>
-              <div>twitter</div>
-              <div>Youtube</div>
+            <div className="grid gap-2 md:flex md:gap-4">
+             
+              <a href="" className="flex"> 
+                <p> <Facebook /></p>
+                facebook</a>
+              <a href="" className="flex"> 
+                <p> <Instagram /></p>
+                facebook</a>
+              <a href="" className="flex"> 
+                <p> <Twitter /></p>
+                Twitter</a>
+              <a href="" className="flex"> 
+                <p> <Youtube /></p>
+                Youtube</a>
             </div>
           </div>
         </div>
