@@ -5,7 +5,7 @@ export const MovieCard = () => {
     <div>
       <div className="max-w-[1277px] 2x1:w-full flex flex-col justify-center w-full ">
         <img
-          src="./end.png"
+          src="./end.jpeg"
           className=" w-[300px] md:h-[full] md:w-[390px] rounded-t-2xl"
         />
         <div>
