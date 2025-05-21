@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 
-export const MovieCard = () => {
+export const MovieCard = ({ movie }) => {
   return (
     <div>
       <div className=" bg-secondary border-1 rounded-2xl flex flex-col justify-center w-full ">

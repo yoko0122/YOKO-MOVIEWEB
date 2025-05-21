@@ -14,7 +14,7 @@ export const MovieCaruosel = ({ NowPLayingMovie }) => {
     <div className="flex justify-center items-center">
       <div>
         <Carousel
-          className=" relative"
+          className="relative"
           plugins={[
             Autoplay({
               delay: 3000,
@@ -25,13 +25,13 @@ export const MovieCaruosel = ({ NowPLayingMovie }) => {
             {NowPLayingMovie?.slice(0, 5).map((movie, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
-                  <MovieCaruoselItem slice={movie} />
+                  <MovieCaruoselItem movie={movie} />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className={"ml-15 "} />
-          <CarouselNext className={"mr-15"} />
+          <CarouselPrevious className="ml-15" />
+          <CarouselNext className="mr-15" />
         </Carousel>
       </div>
     </div>

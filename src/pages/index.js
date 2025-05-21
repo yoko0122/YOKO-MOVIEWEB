@@ -33,7 +33,7 @@ export default function Home() {
     <div className="flex flex-col gap-8">
       <Header />
       <MovieCaruosel NowPLayingMovie={NowPLayingMovie} />
-      <MovieCardsView />
+      <MovieCardsView NowPLayingMovie={NowPLayingMovie} />
       <Footer />
     </div>
   );
