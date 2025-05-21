@@ -5,7 +5,9 @@ import { MovieCardsView } from "@/component/MovieCardsView";
 import { useEffect, useState } from "react";
 export default function Home() {
   const [NowPLayingMovie, setNowPlayingMovie] = useState([]);
+  const [upComingMovies, setUpcomingMovies] = useState([]);
 
+  // carousel
   const getNowPlayingMovies = async () => {
     try {
       const response = await fetch(
@@ -19,7 +21,6 @@ export default function Home() {
         }
       );
       const movies = await response.json();
-      console.log(movies);
       setNowPlayingMovie(movies.results);
     } catch (error) {
       console.log(error);
@@ -28,12 +29,38 @@ export default function Home() {
   useEffect(() => {
     getNowPlayingMovies();
   }, []);
+// 
 
+// upcoming
+const getupComingMovies = async () => {
+   
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/upcoming?language=en-US&page=1`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
+          },
+        }
+      );
+      const movies = await response.json();
+      console.log(movies);
+      setUpcomingMovies(movies.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getupComingMovies();
+  }, []);
+  // 
   return (
     <div className="flex flex-col gap-8">
       <Header />
       <MovieCaruosel NowPLayingMovie={NowPLayingMovie} />
-      <MovieCardsView NowPLayingMovie={NowPLayingMovie} />
+      <MovieCardsView upComingMovies={upComingMovies} />
       <Footer />
     </div>
   );
