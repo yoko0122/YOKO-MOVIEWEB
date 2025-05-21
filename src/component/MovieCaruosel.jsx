@@ -8,22 +8,24 @@ import {
 } from "@/components/ui/carousel";
 import { MovieCaruoselItem } from "./MovieCaruoselItem";
 import Autoplay from "embla-carousel-autoplay";
-export const MovieCaruosel = () => {
+
+export const MovieCaruosel = ({ NowPLayingMovie }) => {
   return (
     <div className="flex justify-center items-center">
       <div>
-        <Carousel className=" relative"
-         plugins={[
+        <Carousel
+          className=" relative"
+          plugins={[
             Autoplay({
               delay: 3000,
             }),
-          ]}>
-         
+          ]}
+        >
           <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
+            {NowPLayingMovie?.slice(0, 5).map((movie, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
-                  <MovieCaruoselItem />
+                  <MovieCaruoselItem slice={movie} />
                 </div>
               </CarouselItem>
             ))}

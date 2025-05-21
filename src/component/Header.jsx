@@ -1,13 +1,10 @@
-
 import { Search } from "lucide-react";
 import { Clapperboard } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
 
-
-
 export const Header = () => {
   return (
-    <div className="pt-6 pl-3 pr-9 flex gap-3 justify-between">
+    <div className="pt-6 pl-3 pr-3 flex gap-3 justify-between">
       <div className="flex gap-1.5">
         <button>
           <Clapperboard />
@@ -15,13 +12,25 @@ export const Header = () => {
         <div className="pt-4">Movie Z</div>
       </div>
 
-      <div className="flex gap-2">
+      <div className=" hidden md:flex md:gap-2">
         {/*  */}
         <div class="relative group inline-block text-left">
           <button class=" font-medium rounded-lg text-sm px-5 h-[36px] text-center inline-flex items-center border-1">
-            Dropdown hover
-            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+            Genre
+            <svg
+              class="w-2.5 h-2.5 ms-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
             </svg>
           </button>
 
@@ -29,16 +38,36 @@ export const Header = () => {
           <div class="absolute left-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow-sm z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-500 dark:bg-gray-700">
             <ul class="py-2 text-sm ">
               <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Dashboard
+                </a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Settings
+                </a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Earnings
+                </a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Sign out
+                </a>
               </li>
             </ul>
           </div>
@@ -81,9 +110,9 @@ export const Header = () => {
         <button className="w-[36px] h-[36px] rounded-md border-1">
           <Search />
         </button>
-        <button className="w-[36px] h-[36px] rounded-md border-1 pt-1">
+        <div className="w-[36px] h-[36px] rounded-md border-1 pt-1">
           <DarkModeToggle />
-        </button>
+        </div>
       </div>
     </div>
   );

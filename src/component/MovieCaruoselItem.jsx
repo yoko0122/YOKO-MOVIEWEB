@@ -1,12 +1,13 @@
 import { Star } from "lucide-react";
 import { Play } from "lucide-react";
 
-export const MovieCaruoselItem = () => {
+export const MovieCaruoselItem = (movie) => {
+  const imageUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${MovieCaruoselItem.backdrop_path}`;
   return (
     <div className="relative h-[500px] md:h-[600px] lg:h-[700px] ">
       <img
-        src="./wicked.png"
-        alt="Wicked Banner"
+        src={imageUrl}
+        alt="p"
         className="w-[1440px] h-[600px] md:w-full md:h-full object-cover object-center"
       />
 
@@ -18,7 +19,7 @@ export const MovieCaruoselItem = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Wicked</h1>
 
           <div className="flex items-center gap-2 text-lg">
-            <Star />
+            <Star className="text-yellow-300 fill-amber-300" />
             <span>6.9</span>
             <span className="text-gray-300 text-sm">/10</span>
           </div>

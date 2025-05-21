@@ -4,14 +4,14 @@ import { UpComing } from "./Upcoming";
 
 export const MovieCardsView = () => {
   return (
-    <div className="grid gap-15">
-      <div className="flex justify-center">
+    <div className=" justify-center grid gap-15 p-6">
+      <div>
         <UpComing />
       </div>
-      <div className="flex justify-center">
+      <div>
         <Popular />
       </div>
-      <div className="flex justify-center">
+      <div>
         <TopRated />
       </div>
     </div>
