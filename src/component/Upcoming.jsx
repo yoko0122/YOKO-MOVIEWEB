@@ -1,8 +1,7 @@
 import { ArrowBigRight } from "lucide-react";
 import { MovieCard } from "./MovieCard";
 
-
-export const UpComing = ({upcoming}) => {
+export const UpComing = ({ upcoming }) => {
   return (
     <div className="flex flex-col gap-4  ">
       <div className="flex justify-between">
@@ -12,8 +11,8 @@ export const UpComing = ({upcoming}) => {
         </button>
       </div>
       <div className=" grid grid-cols-2 md:grid-cols-5 gap-8">
-        {upcoming?.map((movie) => (
-          <MovieCard key={movie.id} movie={movie}/>
+        {upcoming?.map((movies) => (
+          <MovieCard key={movies.id} upComing={movies} />
         ))}
       </div>
     </div>

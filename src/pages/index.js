@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [NowPLayingMovie, setNowPlayingMovie] = useState([]);
   const [upComingMovies, setUpcomingMovies] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
 
   // carousel
   const getNowPlayingMovies = async () => {
@@ -29,11 +31,10 @@ export default function Home() {
   useEffect(() => {
     getNowPlayingMovies();
   }, []);
-// 
+  //
 
-// upcoming
-const getupComingMovies = async () => {
-   
+  // upcoming
+  const getupComingMovies = async () => {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/upcoming?language=en-US&page=1`,
@@ -46,7 +47,7 @@ const getupComingMovies = async () => {
         }
       );
       const movies = await response.json();
-      console.log(movies);
+      // console.log(movies);
       setUpcomingMovies(movies.results);
     } catch (error) {
       console.log(error);
@@ -55,12 +56,65 @@ const getupComingMovies = async () => {
   useEffect(() => {
     getupComingMovies();
   }, []);
-  // 
+  //
+
+  // Popular
+  const getPopularMovies = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/popular?language=en-US&page=1`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
+          },
+        }
+      );
+      const movies = await response.json();
+      console.log(movies);
+      setPopularMovies(movies.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getPopularMovies();
+  }, []);
+  //
+  // TopRated
+  const getTopRatedMovies = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/top_rated?language=en-US&page=1`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
+          },
+        }
+      );
+      const movies = await response.json();
+      console.log(movies);
+      setTopRatedMovies(movies.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getTopRatedMovies();
+  }, []);
+  //
   return (
     <div className="flex flex-col gap-8">
       <Header />
       <MovieCaruosel NowPLayingMovie={NowPLayingMovie} />
-      <MovieCardsView upComingMovies={upComingMovies} />
+      <MovieCardsView
+        upComingMovies={upComingMovies}
+        popularMovies={popularMovies}
+        topRatedMovies={topRatedMovies}
+      />
       <Footer />
     </div>
   );

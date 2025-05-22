@@ -1,6 +1,10 @@
 import { Star } from "lucide-react";
- const upComes = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/origin/movie/upcoming?language=en-US&page=1`;
-export const MovieCard = (movie) => {
+
+export const MovieCard = ({ upComing, Popular, topRated }) => {
+  const upComes = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${
+    upComing?.poster_path || Popular?.poster_path || topRated?.poster_path
+  }`;
+  console.log();
   return (
     <div>
       <div className=" bg-secondary border-1 rounded-2xl flex flex-col justify-center w-full ">
@@ -11,9 +15,18 @@ export const MovieCard = (movie) => {
               <div>
                 <Star className="text-yellow-300 fill-amber-300" />
               </div>
-              <div>{12}</div>
+              <div>
+                {upComing?.vote_average}
+                {Popular?.vote_average}
+                {topRated?.title}
+              </div>
             </div>
-            <div className="h-[auto] w-full flex pb-2"> {movie.page}</div>
+            <div className="h-[auto] w-full flex pb-2">
+              {" "}
+              {upComing?.title}
+              {Popular?.title}
+              {topRated?.title}
+            </div>
           </div>
         </div>
       </div>
