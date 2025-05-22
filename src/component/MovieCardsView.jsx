@@ -9,7 +9,7 @@ export const MovieCardsView = ({
 }) => {
   return (
     <div className="justify-center flex">
-      <div className=" flex flex-col md:max-w-[1230px] justify-center  gap-16 p-6">
+      <div className=" flex flex-col md:max-w-[1330px] justify-center  gap-16 p-6">
         <div>
           <UpComing upcoming={upComingMovies} />
         </div>
