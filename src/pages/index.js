@@ -14,6 +14,7 @@ export default function Home() {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/now_playing?language=en-US&page=1`,
+
         {
           method: "GET",
           headers: {
@@ -47,7 +48,6 @@ export default function Home() {
         }
       );
       const movies = await response.json();
-      // console.log(movies);
       setUpcomingMovies(movies.results);
     } catch (error) {
       console.log(error);
@@ -82,6 +82,7 @@ export default function Home() {
     getPopularMovies();
   }, []);
   //
+
   // TopRated
   const getTopRatedMovies = async () => {
     try {
@@ -106,6 +107,7 @@ export default function Home() {
     getTopRatedMovies();
   }, []);
   //
+
   return (
     <div className="flex flex-col gap-8">
       <Header />

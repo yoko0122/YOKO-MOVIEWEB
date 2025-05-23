@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/carousel";
 import { MovieCaruoselItem } from "./MovieCaruoselItem";
 import Autoplay from "embla-carousel-autoplay";
-import { Details } from "./Details";
 
 export const MovieCaruosel = ({ NowPLayingMovie }) => {
   return (

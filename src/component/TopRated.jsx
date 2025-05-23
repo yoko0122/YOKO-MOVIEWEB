@@ -5,7 +5,7 @@ export const TopRated = ({ toprated }) => {
   return (
     <div className="flex flex-col gap-4  ">
       <div className="flex justify-between">
-        <h1 className="text-[24px]">UpComing</h1>
+        <h1 className="text-[24px]">TopRated</h1>
         <button className="flex gap-1">
           See More <ArrowBigRight />
         </button>

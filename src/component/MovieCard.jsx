@@ -18,7 +18,7 @@ export const MovieCard = ({ upComing, Popular, topRated }) => {
               <div>
                 {upComing?.vote_average}
                 {Popular?.vote_average}
-                {topRated?.title}
+                {topRated?.vote_average}
               </div>
             </div>
             <div className="h-[auto]  w-full flex pb-2">

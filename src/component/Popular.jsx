@@ -6,7 +6,7 @@ export const Popular = ({ popular }) => {
   return (
     <div className="flex flex-col gap-4  ">
       <div className="flex justify-between">
-        <h1 className="text-[24px]">UpComing</h1>
+        <h1 className="text-[24px]">Popular</h1>
         <button className="flex gap-1">
           See More <ArrowBigRight />
         </button>
