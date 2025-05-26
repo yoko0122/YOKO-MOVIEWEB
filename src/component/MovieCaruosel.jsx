@@ -21,7 +21,7 @@ export const MovieCaruosel = ({ NowPLayingMovie }) => {
           ]}
         >
           <CarouselContent>
-            {NowPLayingMovie?.slice(0, 5).map((movie, index) => (
+            {NowPLayingMovie?.slice(0, 10).map((movie, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
                   <MovieCaruoselItem movie={movie} />

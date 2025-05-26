@@ -1,8 +1,7 @@
+import { MovieTrailer } from "@/component/MovieTrailer";
 import { Play, Star } from "lucide-react";
 
 export const DetailsHomePage = ({ movies }) => {
-  console.log(movies);
-
   const imageUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.backdrop_path}`;
   const upComes = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.poster_path}`;
   return (
@@ -38,10 +37,7 @@ export const DetailsHomePage = ({ movies }) => {
                 alt={"Movie Image"}
                 className="h-full w-screen object-cover relative"
               />
-              <button className="absolute m-4 flex gap-2 py-1 pr-1.5 rounded-md border-1 bg-white text-black hover:bg-gray-100 transition">
-                <Play />
-                Watch Trailer
-              </button>
+              <MovieTrailer movieId={movies.id} />
             </div>
           </div>
         </div>

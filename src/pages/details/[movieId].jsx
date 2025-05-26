@@ -23,22 +23,12 @@ export default function Page() {
     getMovie();
   }, [movieId]);
   //
-  const [upComing, setUpcoming] = useState({});
-  useEffect(() => {
-    if (!id) return;
-    const getId = async () => {
-      const data = await id(id);
-      setUpcoming(data);
-    };
-    setUpcoming();
-  }, [id]);
-  console.log(upComing);
-  //
+
   return (
     <div>
       <Header />
       <DetailsHomePage movies={movie} />
-      <MovieCardsView movieCard={movieCard} />
+      <MovieCardsView />
       <Footer />
     </div>
   );
