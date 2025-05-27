@@ -9,7 +9,9 @@ export const Header = () => {
         <button>
           <Clapperboard />
         </button>
-        <div className="pt-4">Movie Z</div>
+        <a href="" className="pt-4">
+          Movie Z
+        </a>
       </div>
 
       <div className=" hidden md:flex md:gap-2">

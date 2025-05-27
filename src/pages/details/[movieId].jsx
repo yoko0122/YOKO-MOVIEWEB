@@ -10,8 +10,6 @@ import { UpComing } from "@/component/Upcoming";
 export default function Page() {
   const router = useRouter();
   const movieId = router.query.movieId;
-  const id = router.query.movieId;
-  const movieCard = router.query.movieId;
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
@@ -26,10 +24,8 @@ export default function Page() {
 
   return (
     <div>
-      <Header />
       <DetailsHomePage movies={movie} />
       <MovieCardsView />
-      <Footer />
     </div>
   );
 }

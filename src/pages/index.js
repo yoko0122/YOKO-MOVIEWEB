@@ -110,14 +110,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-8">
-      <Header />
       <MovieCaruosel NowPLayingMovie={NowPLayingMovie} />
       <MovieCardsView
         upComingMovies={upComingMovies}
         popularMovies={popularMovies}
         topRatedMovies={topRatedMovies}
       />
-      <Footer />
     </div>
   );
 }

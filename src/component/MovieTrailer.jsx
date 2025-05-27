@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
-import { getMovieTrailer } from "../../utils/GetMovieTrailer";
+import { getMovieTrailer } from "../../utils/getMovieTrailer";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Play } from "lucide-react";
 
 export const MovieTrailer = ({ movieId }) => {
   console.log(movieId);
@@ -27,7 +28,11 @@ export const MovieTrailer = ({ movieId }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Watch Trailer</Button>
+        <Button>
+          {" "}
+          <Play />
+          Trailer
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[991px]">
         <YouTube

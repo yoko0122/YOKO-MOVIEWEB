@@ -2,6 +2,7 @@ import { MovieTrailer } from "@/component/MovieTrailer";
 import { Play, Star } from "lucide-react";
 
 export const DetailsHomePage = ({ movies }) => {
+  console.log(movies);
   const imageUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.backdrop_path}`;
   const upComes = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.poster_path}`;
   return (
@@ -11,7 +12,10 @@ export const DetailsHomePage = ({ movies }) => {
           <div className="flex h-full w-full justify-between p-4">
             <div>
               <div className=" text-[30px]">{movies?.title}</div>
-              <div>{movies?.release_date}</div>
+              <div className="flex gap-2">
+                <div>{movies?.release_date}</div>
+                <div> {movies?.runtime}min</div>
+              </div>
             </div>
             <div className="flex gap-4">
               <div>
@@ -19,7 +23,7 @@ export const DetailsHomePage = ({ movies }) => {
               </div>
               <div>
                 <p>{movies?.vote_average}</p>
-                <p className="text-[12px]">37k</p>
+                <p className="text-[12px]">{movies?.popularity} K</p>
               </div>
             </div>
           </div>
@@ -31,13 +35,15 @@ export const DetailsHomePage = ({ movies }) => {
                 className="md:h-full md:w-auto hidden md:inline object-cover"
               />
             </div>
-            <div className="flex flex-col justify-end">
+            <div className=" relative flex flex-col justify-end">
               <img
                 src={imageUrl}
                 alt={"Movie Image"}
                 className="h-full w-screen object-cover relative"
               />
-              <MovieTrailer movieId={movies.id} />
+              <div className="absolute p-4">
+                <MovieTrailer movieId={movies.id} />
+              </div>
             </div>
           </div>
         </div>
