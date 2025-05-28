@@ -1,7 +1,7 @@
-export const GetMovieByid = async (movieId) => {
+export const GetGenreById = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_TMDB_BASE_URL} /genre/movie/list?language=en`,
+      `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}genre/movie/list?language=en`,
       {
         method: "GET",
         headers: {
@@ -10,7 +10,10 @@ export const GetMovieByid = async (movieId) => {
         },
       }
     );
-    const movies = await response.json();
-    return movies;
-  } catch (error) {}
+    const genre = await response.json();
+    console.log(genre);
+    return genre;
+  } catch (error) {
+    console.log(error);
+  }
 };
