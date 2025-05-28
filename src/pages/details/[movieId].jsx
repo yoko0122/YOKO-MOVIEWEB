@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { GetMovieByid } from "../../../utils/GetMovieById";
-import { Header } from "@/component/Header";
-import { Footer } from "@/component/Footer";
 import { DetailsHomePage } from "./DetailsHomePage";
 import { MovieCardsView } from "@/component/MovieCardsView";
-import { UpComing } from "@/component/Upcoming";
-
 export default function Page() {
   const router = useRouter();
   const movieId = router.query.movieId;
