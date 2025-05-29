@@ -31,7 +31,7 @@ const UpComingSet = () => {
         </div>
         <div className=" grid grid-cols-2 md:grid-cols-5 gap-8">
           {upComing?.map((movies) => (
-            <MovieCard key={movies.id} upComing={movies} />
+            <MovieCard key={movies.id} movies={movies} />
           ))}
         </div>
       </div>

@@ -1,24 +1,18 @@
 import { Search } from "lucide-react";
 import { Clapperboard } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
-import { HeaderGenre } from "@/component/HeaderGenre";
-
-
+import { HeaderGenre } from "@/pages/genre/HeaderGenre";
+import Link from "next/link";
 
 export const Header = () => {
   return (
     <div className="pt-6 pl-3 pr-3 flex gap-3 justify-between">
       <div className="flex gap-1.5">
-        <button>
-          <Clapperboard />
-        </button>
-        <a href="" className="pt-4">
-          Movie Z
-        </a>
+        <Clapperboard />
+        <Link href={`/`}>Movie Z</Link>
       </div>
-
       <div className=" hidden md:flex md:gap-2">
-       <HeaderGenre/>
+        <HeaderGenre />
         {/*  */}
         <div className="w-[397px] h-[36px] rounded-lg border-1">
           <form class="max-w-md mx-auto">

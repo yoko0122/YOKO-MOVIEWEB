@@ -15,7 +15,7 @@ export const UpComing = ({ upcoming }) => {
       </div>
       <div className=" grid grid-cols-2 md:grid-cols-5 gap-8">
         {upcoming?.slice(0, 10).map((movies) => (
-          <MovieCard key={movies.id} upComing={movies} />
+          <MovieCard key={movies.id} movies={movies} />
         ))}
       </div>
     </div>

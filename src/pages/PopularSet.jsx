@@ -33,7 +33,7 @@ const TopRatedSet = () => {
         </div>
         <div className=" grid grid-cols-2 md:grid-cols-5 gap-8">
           {Popular?.map((movies) => (
-            <MovieCard key={movies.id} Popular={movies} />
+            <MovieCard key={movies.id} movies={movies} />
           ))}
         </div>
       </div>
