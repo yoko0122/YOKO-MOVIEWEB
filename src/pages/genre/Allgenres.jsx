@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Button } from "@/components/ui/button";
-import { MovieCard } from "@/component/MovieCard";
-import { DropDownMovies } from "./DropDownMovies";
+import { useEffect, useState } from "react";
 
 export const AllGenres = () => {
   const router = useRouter();
@@ -32,24 +29,28 @@ export const AllGenres = () => {
     getMovieGenres();
   }, []);
 
-  const handleSelectGenre = (id, name) => {
+  const genreSelect = (id, name) => {
     setGenreIds([...genreIds, id]);
 
-    router.push(`/genre/genre?p=${genreIds}&name=${name}`);
+    router.push(`/genre/genre?genreIds=${genreIds}&name=${name}`);
   };
+
   return (
-    <div>
-      <div className="grid grid-cols-3 gap-4">
-        {genres?.genres?.map((genre) => (
-          <Button
-            className="w-fit bg-white text-foreground hover:bg-none text-[12px] font-bold"
-            onClick={() => handleSelectGenre(genre.id, genre.name)}
+    <div className="grid grid-cols-3 gap-4 md:gap-9">
+      {genres?.genres?.map((genre) => {
+        const isSelected = genreIds?.includes(String(genre.id));
+        console.log(isSelected);
+        return (
+          <div
+            className={`text-foreground  text-[12px] font-bold  ${
+              isSelected ? "bg-black" : "bg-white"
+            }"`}
+            onClick={() => genreSelect(genre.id, genre.name)}
           >
             {genre.name}
-          </Button>
-        ))}
-      </div>
-      <DropDownMovies genreIds={genreIds} />
+          </div>
+        );
+      })}
     </div>
   );
 };
