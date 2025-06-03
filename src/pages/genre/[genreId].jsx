@@ -20,16 +20,26 @@ const Page = () => {
   }, [genreIds]);
 
   return (
-    <div className="flex flex-col gap-8  p-10">
-      <h1>Search filter</h1>
-      <div className="md:flex md:justify-between">
-        <div className="">
-          <AllGenres />
+    <div className="flex justify-center">
+      <div className="flex flex-col gap-10 justify-center p-6 max-w-[1440px]">
+        <div className="flex flex-col gap-6">
+          <h1 className="font-black text-[30px]">Search filter</h1>
+          <div className="flex flex-col gap-2">
+            <h1 className="font-black text-[20px]">Genres</h1>
+            <h1 className="hidden xl:flex md:flex">
+              See List of movies by genre
+            </h1>
+          </div>
         </div>
-        <div className="md:max-w-[904px]  grid grid-cols-2 md:grid-cols-4 gap-2">
-          {genreMovies?.map((genre) => (
-            <MovieCard movies={genre} />
-          ))}
+        <div className="xl:flex xl:justify-between xl:max-w-[1907px] xl:gap-30">
+          <div>
+            <AllGenres />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 xl:max-w-[907px] gap-6">
+            {genreMovies?.map((genre) => (
+              <MovieCard movies={genre} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

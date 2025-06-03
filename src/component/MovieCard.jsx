@@ -2,7 +2,6 @@ import { Star } from "lucide-react";
 import Link from "next/link";
 
 export const MovieCard = ({ movies }) => {
-  console.log(movies);
   const upComes = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.poster_path}`;
   return (
     <div>

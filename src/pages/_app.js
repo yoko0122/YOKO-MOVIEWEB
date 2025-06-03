@@ -1,13 +1,16 @@
 import { Footer } from "@/component/Footer";
 import { Header } from "@/component/Header";
 import "@/styles/globals.css";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 export default function App({ Component, pageProps }) {
   return (
     <div>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <NuqsAdapter>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </NuqsAdapter>
     </div>
   );
 }

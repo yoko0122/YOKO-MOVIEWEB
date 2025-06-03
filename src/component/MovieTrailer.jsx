@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Play } from "lucide-react";
 
 export const MovieTrailer = ({ movieId }) => {
-  console.log(movieId);
+  // console.log(movieId);
   const [trailer, setTrailer] = useState([]);
   useEffect(() => {
     const getMovieTrailerById = async () => {
@@ -24,7 +24,6 @@ export const MovieTrailer = ({ movieId }) => {
   const MovieTrailer = trailer.find(
     (vidio) => (vidio.name = "Official Trailer")
   );
-  console.log(trailer);
   return (
     <Dialog>
       <DialogTrigger asChild>

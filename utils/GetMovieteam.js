@@ -1,7 +1,7 @@
-export const getMoreLike = async (id) => {
+export const getMovieteam = async (team) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${id}/similar?language=en-US&page=1`,
+      `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${team}/credits?language=en-US`,
       {
         method: "GET",
         headers: {
@@ -10,9 +10,10 @@ export const getMoreLike = async (id) => {
         },
       }
     );
-    const moreLike = await response.json();
-    return moreLike;
-  } catch {
+    const movieTeam = await response.json();
+
+    return movieTeam;
+  } catch (error) {
     console.log(error);
   }
 };

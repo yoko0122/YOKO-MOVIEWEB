@@ -1,13 +1,13 @@
 import { MovieTrailer } from "@/component/MovieTrailer";
 import { Play, Star } from "lucide-react";
 
-export const DetailsHomePage = ({ movies }) => {
-  console.log(movies);
+export const DetailsHomePage = ({ movies, movieTeam }) => {
+  // console.log("moooooo", movieTeam);
   const imageUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.backdrop_path}`;
   const upComes = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.poster_path}`;
   return (
-    <div className=" flex flex-col items-center">
-      <div className="md:max-w-[1648px] flex flex-col gap-6">
+    <div>
+      <div>
         <div className="flex flex-col ">
           <div className="flex h-full w-full justify-between p-4">
             <div>
@@ -70,21 +70,6 @@ export const DetailsHomePage = ({ movies }) => {
 
             {/* Description */}
             <p className="text-gray-400">{movies?.overview}</p>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 border-t  border-gray-700 pt-4 space-y-2">
-          <div className="flex gap-12">
-            <p className=" text-[20px]">Director</p>
-            <p>Jon M. Chu</p>
-          </div>
-          <div className=" flex gap-13 border-t  border-gray-700">
-            <p className=" text-[20px]">Writers</p>
-            <p>Winnie Holzman · Dana Fox · Gregory Maguire</p>
-          </div>
-          <div className="flex gap-17 border-t  border-gray-700">
-            <p className=" text-[20px]">Stars</p>
-            <p>Cynthia Erivo · Ariana Grande · Jeff Goldblum</p>
           </div>
         </div>
       </div>

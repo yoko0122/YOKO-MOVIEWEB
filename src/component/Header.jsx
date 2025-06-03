@@ -7,7 +7,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <div className="pt-6 pl-3 pr-3 flex gap-3 justify-between">
-      <div className="flex gap-1.5">
+      <div className="flex gap-1.5 pl-10 pr-10">
         <Clapperboard />
         <Link href={`/`}>Movie Z</Link>
       </div>
