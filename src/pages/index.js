@@ -1,8 +1,8 @@
-import { Header } from "@/component/Header";
-import { Footer } from "@/component/Footer";
 import { MovieCaruosel } from "@/component/MovieCaruosel";
 import { MovieCardsView } from "@/component/MovieCardsView";
 import { useEffect, useState } from "react";
+import { HomePageLoading } from "@/component/HomePageLoading";
+import { MovieLoading } from "@/component/MovieLoading";
 export default function Home() {
   const [NowPLayingMovie, setNowPlayingMovie] = useState([]);
   const [upComingMovies, setUpcomingMovies] = useState([]);
@@ -10,7 +10,9 @@ export default function Home() {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
 
   // carousel
+  const [loading, setLoading] = useState(false);
   const getNowPlayingMovies = async () => {
+    setLoading(true);
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/now_playing?language=en-US&page=1`,
@@ -28,6 +30,7 @@ export default function Home() {
     } catch (error) {
       console.log(error);
     }
+    setLoading(false);
   };
   useEffect(() => {
     getNowPlayingMovies();
@@ -35,7 +38,9 @@ export default function Home() {
   //
 
   // upcoming
+  const [uploading, setUploading] = useState(false);
   const getupComingMovies = async () => {
+    setUploading(true);
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/upcoming?language=en-US&page=1`,
@@ -52,6 +57,7 @@ export default function Home() {
     } catch (error) {
       console.log(error);
     }
+    setUploading(false);
   };
   useEffect(() => {
     getupComingMovies();
@@ -59,7 +65,9 @@ export default function Home() {
   //
 
   // Popular
+  const [poploading, setPoploading] = useState(false);
   const getPopularMovies = async () => {
+    setPoploading(true);
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/popular?language=en-US&page=1`,
@@ -77,6 +85,7 @@ export default function Home() {
     } catch (error) {
       console.log(error);
     }
+    setPoploading(false);
   };
   useEffect(() => {
     getPopularMovies();
@@ -84,7 +93,9 @@ export default function Home() {
   //
 
   // TopRated
+  const [toploading, setToploading] = useState(false);
   const getTopRatedMovies = async () => {
+    setToploading(true);
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/top_rated?language=en-US&page=1`,
@@ -102,6 +113,7 @@ export default function Home() {
     } catch (error) {
       console.log(error);
     }
+    setToploading(false);
   };
   useEffect(() => {
     getTopRatedMovies();
@@ -110,7 +122,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-8">
+      {loading && <HomePageLoading />}
       <MovieCaruosel NowPLayingMovie={NowPLayingMovie} />
+      {uploading && <MovieLoading />}
+      {poploading && <MovieLoading />}
+      {toploading && <MovieLoading />}
+
       <MovieCardsView
         upComingMovies={upComingMovies}
         popularMovies={popularMovies}

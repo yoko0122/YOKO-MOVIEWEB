@@ -37,7 +37,7 @@ export const MovieTrailer = ({ movieId }) => {
         <YouTube
           videoId={MovieTrailer?.key}
           opts={{
-            height: "761",
+            height: "561",
             width: "100%",
             playerVars: {
               autoplay: 1,
