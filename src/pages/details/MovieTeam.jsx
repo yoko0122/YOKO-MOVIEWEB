@@ -2,13 +2,16 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getMovieteam } from "../../../utils/GetMovieteam";
 import { TeamId } from "./TeamId";
+import { TeamLoading } from "@/component/TeamLoading";
 
 export const MovieTeam = () => {
+  const [loading, setLoading] = useState(false);
   const [movieTeam, setMovieTeam] = useState({});
   const router = useRouter();
   const team = router.query.movieId;
   console.log(team);
   useEffect(() => {
+    setLoading(true);
     if (!team) return;
 
     const getmovie = async () => {
@@ -19,7 +22,7 @@ export const MovieTeam = () => {
         console.error(error);
       }
     };
-
+    setLoading(false);
     getmovie();
   }, [team]);
   console.log(movieTeam);
@@ -37,6 +40,7 @@ export const MovieTeam = () => {
 
   return (
     <div>
+      {loading && <TeamLoading />}
       <TeamId directors={directors} writers={writers} stars={stars} />
     </div>
   );

@@ -80,7 +80,6 @@ export default function Home() {
         }
       );
       const movies = await response.json();
-      console.log(movies);
       setPopularMovies(movies.results);
     } catch (error) {
       console.log(error);
@@ -108,7 +107,6 @@ export default function Home() {
         }
       );
       const movies = await response.json();
-      console.log(movies);
       setTopRatedMovies(movies.results);
     } catch (error) {
       console.log(error);

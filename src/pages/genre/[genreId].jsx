@@ -3,19 +3,21 @@ import { AllGenres } from "./Allgenres";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { genreMovieById } from "../../../utils/GenreMovieById";
+import { GeneralidLoading } from "@/component/GeneralidLoading";
 
 const Page = () => {
   const [genreMovies, setGenreMovie] = useState([]);
   const router = useRouter();
   const genreIds = router.query.genreIds;
-
+  const [Loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     const getGenreMovie = async () => {
       const data = await genreMovieById(genreIds);
 
       setGenreMovie(data.results);
     };
-
+    setLoading(false);
     getGenreMovie();
   }, [genreIds]);
 
@@ -39,6 +41,7 @@ const Page = () => {
             {genreMovies?.map((genre) => (
               <MovieCard movies={genre} />
             ))}
+            {Loading && <GeneralidLoading />}
           </div>
         </div>
       </div>
