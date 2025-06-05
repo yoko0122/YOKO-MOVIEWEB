@@ -3,7 +3,7 @@ import { Clapperboard } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { HeaderGenre } from "@/pages/genre/HeaderGenre";
 import Link from "next/link";
-import { SearchInput } from "./SearchInput";
+import { SearchInput } from "../pages/search/SearchInput";
 
 export const Header = () => {
   return (

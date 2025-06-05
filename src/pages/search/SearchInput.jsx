@@ -2,6 +2,7 @@ import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import { SearchResult } from "./SearchResulr";
 
+
 export const SearchInput = () => {
   const [searchValue, setSearchValue] = useState("");
   const [movies, setMovies] = useState([]);

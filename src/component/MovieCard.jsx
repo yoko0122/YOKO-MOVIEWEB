@@ -7,7 +7,7 @@ export const MovieCard = ({ movies }) => {
     <div>
       <div className=" bg-secondary border-1 rounded-2xl flex flex-col justify-center w-full ">
         <Link href={`/details/${movies?.id}`}>
-          <img src={upComes} className="  md:h-[pull] rounded-t-2xl" />
+          <img src={upComes} alt="Image" className="  md:h-[pull] rounded-t-2xl" />
         </Link>
         <div>
           <div className="flex flex-col gap-2 md:gap-4 md:pl-4 ">

@@ -28,11 +28,14 @@ export const MoreLikeThis = () => {
 
   return (
     <div className="flex justify-center">
+      <div className="flex flex-col">
+        <p className="pl-8 text-[25px]">More Like this</p>
       <div className="md:max-w-[1204px] p-6 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         {loading && <MovieLikeLoading />}
         {moreLike?.slice(0, 12)?.map((like) => (
           <MovieCard movies={like} />
         ))}
+      </div>
       </div>
     </div>
   );
