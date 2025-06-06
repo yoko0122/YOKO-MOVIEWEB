@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { GetMovieByid } from "../../../utils/GetMovieById";
-import { DetailsHomePage } from "./DetailsHomePage";
+import DetailsHomePage from "@/component/DetailsHomePage";
 import { MovieCardsView } from "@/component/MovieCardsView";
-import { MoreLikeThis } from "./MoreLikeThis";
+import MoreLikeThis from "./MoreLikeThis";
 import { TeamId } from "./TeamId";
-import { MovieTeam } from "./MovieTeam";
+import MovieTeam from "./MovieTeam";
 import { useQueryState } from "nuqs";
 import { MovieDetailsLoading } from "@/component/MovieDetailsLoading";
 

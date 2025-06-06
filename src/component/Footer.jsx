@@ -25,7 +25,7 @@ export const Footer = () => {
               </div>
               <div>
                 <p>Email:</p>
-                <a href="">dolbadrahchuka@gmail.com</a>
+                <a href="">MovieZ@gmail.com</a>
               </div>
             </div>
             <div className="flex gap-2">
@@ -34,12 +34,12 @@ export const Footer = () => {
               </div>
               <div>
                 <p>Phone: </p>
-                <a href="">94438118</a>
+                <a href="">70112233</a>
               </div>
             </div>
           </div>
           <div className="grid gap-2  md:h-2">
-            <div className=" text-[20px]">follow us</div>
+            <div className=" text-[20px]">Follow us</div>
             <div className="grid gap-2 md:flex md:gap-4">
               <a
                 href="https://www.facebook.com/profile.php?id=100035801532871&ref=_ig_profile_ac"

@@ -63,3 +63,5 @@ export const AllGenres = () => {
     </div>
   );
 };
+
+export default AllGenres;

@@ -1,7 +1,7 @@
 import { MovieTrailer } from "@/component/MovieTrailer";
 import { Play, Star } from "lucide-react";
 
-export const DetailsHomePage = ({ movies, movieTeam }) => {
+const DetailsHomePage = ({ movies, movieTeam }) => {
   // console.log("moooooo", movieTeam);
   const imageUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.backdrop_path}`;
   const upComes = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}/original${movies?.poster_path}`;
@@ -47,32 +47,32 @@ export const DetailsHomePage = ({ movies, movieTeam }) => {
             </div>
           </div>
         </div>
-        <div className="flex">
-          <div className=" max-w-[200px] md:hidden ">
-            <img
-              src={upComes}
-              alt=""
-              className="h-auto w-auto inline object-cover"
-            />
+        <div className=" max-w-[200px] md:hidden ">
+          <img
+            src={upComes}
+            alt=""
+            className="h-auto w-auto inline object-cover"
+          />
+        </div>
+        <div className=" p-6 space-y-6 w-full mx-auto rounded-2xl ">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2">
+            {movies?.genres?.map((genre, index) => (
+              <p
+                key={index}
+                className="border border-gray-500 rounded-full px-3 py-1 text-xs"
+              >
+                {genre?.name}
+              </p>
+            ))}
           </div>
-          <div className=" p-6 space-y-6 w-full mx-auto rounded-2xl ">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {movies?.genres?.map((genre, index) => (
-                <p
-                  key={index}
-                  className="border border-gray-500 rounded-full px-3 py-1 text-xs"
-                >
-                  {genre?.name}
-                </p>
-              ))}
-            </div>
 
-            {/* Description */}
-            <p className="text-gray-400">{movies?.overview}</p>
-          </div>
+          {/* Description */}
+          <p className="text-gray-400">{movies?.overview}</p>
         </div>
       </div>
     </div>
   );
 };
+
+export default DetailsHomePage;

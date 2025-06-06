@@ -10,3 +10,5 @@ export const DropDownMovies = ({ genreIds }) => {
     </div>
   );
 };
+
+export default DropDownMovies;

@@ -27,3 +27,5 @@ export const HeaderGenre = () => {
     </div>
   );
 };
+
+export default HeaderGenre;

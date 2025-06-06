@@ -5,7 +5,7 @@ import { getMoreLike } from "../../../utils/GetMoreLike";
 import { MovieLikeLoading } from "@/component/MovieLikeLoading";
 import { MovieCard } from "@/component/MovieCard";
 
-export const MoreLikeThis = () => {
+const MoreLikeThis = () => {
   const [moreLike, setMoreLike] = useState([]);
   const router = useRouter();
   const id = router.query.movieId;
@@ -40,3 +40,5 @@ export const MoreLikeThis = () => {
     </div>
   );
 };
+
+export default MoreLikeThis;

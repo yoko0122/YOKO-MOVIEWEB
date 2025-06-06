@@ -4,7 +4,7 @@ import { getMovieteam } from "../../../utils/GetMovieteam";
 import { TeamId } from "./TeamId";
 import { TeamLoading } from "@/component/TeamLoading";
 
-export const MovieTeam = () => {
+const MovieTeam = () => {
   const [loading, setLoading] = useState(false);
   const [movieTeam, setMovieTeam] = useState({});
   const router = useRouter();
@@ -45,3 +45,5 @@ export const MovieTeam = () => {
     </div>
   );
 };
+
+export default MovieTeam;

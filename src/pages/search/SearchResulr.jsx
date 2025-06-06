@@ -1,4 +1,4 @@
-import { SearchMovieCard } from "./SearchMovieCard";
+import SearchMovieCard from "@/component/SearchMovieCard";
 
 export const SearchResult = ({ movies, setSearchValue }) => {
   console.log(movies);
@@ -13,3 +13,5 @@ export const SearchResult = ({ movies, setSearchValue }) => {
     </div>
   );
 };
+
+export default SearchResult;

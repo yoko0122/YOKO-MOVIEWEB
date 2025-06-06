@@ -22,3 +22,5 @@ export const TeamId = ({ directors, writers, stars }) => {
     </div>
   );
 };
+
+export default TeamId;

@@ -1,6 +1,6 @@
 import { AllGenres } from "../genre/Allgenres";
 import { SearchInput } from "./SearchInput";
-import { SearchMovieCard } from "./SearchMovieCard";
+import SearchMovieCard from "@/component/SearchMovieCard";
 
 export default function SearchHomePage() {
   return (

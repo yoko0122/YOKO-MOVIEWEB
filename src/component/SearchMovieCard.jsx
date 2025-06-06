@@ -50,3 +50,5 @@ export const SearchMovieCard = ({ movie, setSearchValue }) => {
     </div>
   );
 };
+
+export default SearchMovieCard;
