@@ -13,10 +13,14 @@ export const Header = () => {
         <Link href={`/`}>Movie Z</Link>
       </div>
       <div className=" hidden md:flex md:gap-2">
-        <HeaderGenre />
-        <button className="w-[36px] h-[36px] rounded-md border-1">
-          <Search className="pl-2" />
-        </button>
+        <div>
+          <HeaderGenre />
+        </div>
+        <Link href={`search/searchHomePage`}>
+          <button className="w-[36px] h-[36px] rounded-md border-1">
+            <Search className="pl-2" />
+          </button>
+        </Link>
         <div className="w-[397px] h-[36px] rounded-lg border-1">
           <SearchInput />
         </div>

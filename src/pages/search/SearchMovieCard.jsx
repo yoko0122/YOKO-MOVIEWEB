@@ -1,5 +1,5 @@
 import { Separator } from "@radix-ui/react-dropdown-menu";
-import { Star } from "lucide-react";
+import { ArrowBigRight, Star } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -13,7 +13,10 @@ export const SearchMovieCard = ({ movie, setSearchValue }) => {
   };
   return (
     <div>
-      <div className="bg-secondary border-1 rounded-2xl p-1 flex w-full ">
+      <div
+        onClick={routerPush}
+        className="bg-secondary border-1 rounded-2xl p-1 flex w-full "
+      >
         <img src={upComes} className="h-[100px] w-[67px] rounded-lg" />
         <div className="flex flex-col w-[500px] gap-4 md:pl-4">
           <div className="flex flex-col gap-2 md:gap-4 w-full">
@@ -32,8 +35,11 @@ export const SearchMovieCard = ({ movie, setSearchValue }) => {
           </div>
           <div className="flex justify-between">
             <div className="h-[auto] w-full flex pb-2"> {release_date}</div>
-            <div onClick={routerPush} className="w-[100px]">
-              See more
+            <div className="w-[130px] flex">
+              See More
+              <p>
+                <ArrowBigRight />
+              </p>
             </div>
           </div>
         </div>
