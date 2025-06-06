@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { Clapperboard } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
-import { HeaderGenre } from "@/pages/Genre/HeaderGenre";
+import { HeaderGenre } from "../pages/Genre/HeaderGenre";
 import Link from "next/link";
 import { SearchInput } from "./SearchInput";
 
