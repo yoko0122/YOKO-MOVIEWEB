@@ -48,9 +48,10 @@ export const AllGenres = () => {
       {genres?.genres?.map((genre) => {
         // console.log(genreIds);
         const isSelected = genreIds?.includes(genre.id);
-        console.log(isSelected);
+        
         return (
           <div
+           key={genre.id}
             className={`text-foreground dark:text-black text-[12px] font-bold h-8 flex justify-center items-center rounded-md border-1 ${
               isSelected ? "bg-blue-300" : "bg-white"
             }`}

@@ -39,7 +39,7 @@ const Page = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 xl:max-w-[907px] gap-6">
             {genreMovies?.map((genre) => (
-              <MovieCard movies={genre} />
+              <MovieCard key={genre.id} movies={genre} />
             ))}
             {Loading && <GeneralidLoading />}
           </div>
