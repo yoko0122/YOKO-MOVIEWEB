@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { GetMovieByid } from "../../../utils/GetMovieById";
+import { GetMovieByid } from "../../utils/GetMovieById";
 import DetailsHomePage from "@/component/DetailsHomePage";
 import { MovieCardsView } from "@/component/MovieCardsView";
 import MoreLikeThis from "./MoreLikeThis";

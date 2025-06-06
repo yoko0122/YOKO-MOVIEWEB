@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { getMoreLike } from "../../../utils/GetMoreLike";
+import { getMoreLike } from "../../utils/GetMoreLike";
 import { MovieLikeLoading } from "@/component/MovieLikeLoading";
 import { MovieCard } from "@/component/MovieCard";
 

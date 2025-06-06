@@ -1,4 +1,4 @@
-import { AllGenres } from "../genre/Allgenres";
+import { AllGenres } from "../pages/Genre/Allgenres";
 import { SearchInput } from "./SearchInput";
 import SearchMovieCard from "@/component/SearchMovieCard";
 

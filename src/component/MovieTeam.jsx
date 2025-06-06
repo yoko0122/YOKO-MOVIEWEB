@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { getMovieteam } from "../../../utils/GetMovieteam";
+import { getMovieteam } from "../../utils/GetMovieteam";
 import { TeamId } from "./TeamId";
 import { TeamLoading } from "@/component/TeamLoading";
 

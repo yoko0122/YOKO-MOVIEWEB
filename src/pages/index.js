@@ -28,7 +28,7 @@ export default function Home() {
       const movies = await response.json();
       setNowPlayingMovie(movies.results);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     setLoading(false);
   };
@@ -55,7 +55,7 @@ export default function Home() {
       const movies = await response.json();
       setUpcomingMovies(movies.results);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     setUploading(false);
   };
@@ -82,7 +82,7 @@ export default function Home() {
       const movies = await response.json();
       setPopularMovies(movies.results);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     setPoploading(false);
   };
@@ -109,7 +109,7 @@ export default function Home() {
       const movies = await response.json();
       setTopRatedMovies(movies.results);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
     setToploading(false);
   };
