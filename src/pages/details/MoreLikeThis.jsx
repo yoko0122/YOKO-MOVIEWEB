@@ -33,7 +33,7 @@ const MoreLikeThis = () => {
       <div className="md:max-w-[1204px] p-6 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         {loading && <MovieLikeLoading />}
         {moreLike?.slice(0, 12)?.map((like) => (
-          <MovieCard movies={like} />
+          <MovieCard key={like.id || like.title} movies={like} />
         ))}
       </div>
       </div>
